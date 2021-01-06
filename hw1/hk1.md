@@ -20,6 +20,14 @@
             Nand(a = in, b = in, out = out);
         }
 
+
+
+|  in   |  out  |
+|   0   |   1   |
+|   1   |   0   |
+
+
+
 ## 2.AND
     Code:
         // This file is part of www.nand2tetris.org
@@ -41,6 +49,15 @@
             Nand(a = a, b = b, out = nand);
 	        Not(in = nand, out = out);
         }
+
+
+
+|   a   |   b   |  out  |
+|   0   |   0   |   0   |
+|   0   |   1   |   0   |
+|   1   |   0   |   0   |
+|   1   |   1   |   1   |
+
 
 ## 3.OR
     Code:
@@ -66,6 +83,13 @@
 	        Not(in = not ab, out = out);
         }
 
+|   a   |   b   |  out  |
+|   0   |   0   |   0   |
+|   0   |   1   |   1   |
+|   1   |   0   |   1   |
+|   1   |   1   |   1   |
+
+
 ## 4.XOR
     Code:
         // This file is part of www.nand2tetris.org
@@ -87,6 +111,14 @@
 	        Nand(a = a, b = b, out = a nand b);
 	        And(a = a or b, b = a nand b, out = out);
         }
+
+|   a   |   b   |  out  |
+|   0   |   0   |   0   |
+|   0   |   1   |   1   |
+|   1   |   0   |   1   |
+|   1   |   1   |   0   |
+
+
 
 ## 5.MUX
     Code:
@@ -111,6 +143,19 @@
 	        And(a = sel, b = b, out = sel b);
 	        Or(a = sel a, b = sel b, out = out);
         }
+	
+	
+|   a   |   b   |  sel  |  out  |
+|   0   |   0   |   0   |   0   |
+|   0   |   0   |   1   |   0   |
+|   0   |   1   |   0   |   0   |
+|   0   |   1   |   1   |   1   |
+|   1   |   0   |   0   |   1   |
+|   1   |   0   |   1   |   0   |
+|   1   |   1   |   0   |   1   |
+|   1   |   1   |   1   |   1   |
+	
+	
 ## 6.DMUX
     Code:
         // This file is part of www.nand2tetris.org
@@ -133,6 +178,14 @@
 	          And(a = not sel, b = in, out = a);
 	          And(a = sel, b = in, out = b);
         }
+
+
+|  in   |  sel  |   a   |   b   |
+|   0   |   0   |   0   |   0   |
+|   0   |   1   |   0   |   0   |
+|   1   |   0   |   1   |   0   |
+|   1   |   1   |   0   |   1   |
+
 
 ![image](./1.jpg)
 ![image](./2.jpg)

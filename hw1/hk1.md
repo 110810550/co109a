@@ -1,8 +1,8 @@
 ## 第一章前六題:
 
-## 1.NOT
+1.NOT
 
-
+````
     Code:
         // This file is part of www.nand2tetris.org
         // and the book "The Elements of Computing Systems"
@@ -22,20 +22,22 @@
             Nand(a = in, b = in, out = out);
         }
 
-‵‵‵‵‵
+````
+
+````
+
+|  in   |  out  |
+|   0   |   1   |
+|   1   |   0   |
 
 
-
-
-
-
-
+````
 
 
 
 
 ## 2.AND
-
+````
     Code:
         // This file is part of www.nand2tetris.org
         // and the book "The Elements of Computing Systems"
@@ -57,13 +59,20 @@
 	        Not(in = nand, out = out);
         }
 
+````
+
+````
+|   a   |   b   |  out  |
+|   0   |   0   |   0   |
+|   0   |   1   |   0   |
+|   1   |   0   |   0   |
+|   1   |   1   |   1   |
 
 
 
-
-
+````
 ## 3.OR
-
+````
     Code:
         // This file is part of www.nand2tetris.org
         // and the book "The Elements of Computing Systems"
@@ -86,11 +95,18 @@
 	        And(a = not a, b = not b, out = not ab);
 	        Not(in = not ab, out = out);
         }
+````
 
+````
+|   a   |   b   |  out  |
+|   0   |   0   |   0   |
+|   0   |   1   |   1   |
+|   1   |   0   |   1   |
+|   1   |   1   |   1   |
 
-
+````
 ## 4.XOR
-
+````
     Code:
         // This file is part of www.nand2tetris.org
         // and the book "The Elements of Computing Systems"
@@ -111,12 +127,19 @@
 	        Nand(a = a, b = b, out = a nand b);
 	        And(a = a or b, b = a nand b, out = out);
         }
+````
+```
+
+|   a   |   b   |  out  |
+|   0   |   0   |   0   |
+|   0   |   1   |   1   |
+|   1   |   0   |   1   |
+|   1   |   1   |   0   |
 
 
-
-
+```
 ## 5.MUX
-
+````
     Code:
         // This file is part of www.nand2tetris.org
         // and the book "The Elements of Computing Systems"
@@ -140,11 +163,24 @@
 	        Or(a = sel a, b = sel b, out = out);
         }
 	
-	
 
-	
+
+
+````
+
+````
+|   a   |   b   |  sel  |  out  |
+|   0   |   0   |   0   |   0   |
+|   0   |   0   |   1   |   0   |
+|   0   |   1   |   0   |   0   |
+|   0   |   1   |   1   |   1   |
+|   1   |   0   |   0   |   1   |
+|   1   |   0   |   1   |   0   |
+|   1   |   1   |   0   |   1   |
+|   1   |   1   |   1   |   1   |
+````
 ## 6.DMUX
-
+````
     Code:
         // This file is part of www.nand2tetris.org
         // and the book "The Elements of Computing Systems"
@@ -166,8 +202,14 @@
 	          And(a = not sel, b = in, out = a);
 	          And(a = sel, b = in, out = b);
         }
+````
+````
 
-
-
+|  in   |  sel  |   a   |   b   |
+|   0   |   0   |   0   |   0   |
+|   0   |   1   |   0   |   0   |
+|   1   |   0   |   1   |   0   |
+|   1   |   1   |   0   |   1   |
+````
 ![image](./1.jpg)
 ![image](./2.jpg)
